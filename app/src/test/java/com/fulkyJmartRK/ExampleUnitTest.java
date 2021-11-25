@@ -1,4 +1,4 @@
-package com.ajarin.jmart_android;
+package com.fulkyJmartRK;
 
 import org.junit.Test;
 
