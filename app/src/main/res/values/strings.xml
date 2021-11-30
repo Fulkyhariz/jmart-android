@@ -7,4 +7,6 @@
     <string name="register_now">Register Now</string>
     <string name="register">Register</string>
     <string name="hello_user">Hello User!</string>
+    <string name="name">name</string>
+    <string name="user">User</string>
 </resources>

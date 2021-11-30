@@ -25,7 +25,6 @@ implements Response.Listener<String>, Response.ErrorListener{
     private EditText emailInput;
     private EditText nameInput;
     private EditText passwordInput;
-    private AppCompatButton registerbtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +34,7 @@ implements Response.Listener<String>, Response.ErrorListener{
         emailInput = findViewById(R.id.email);
         passwordInput = findViewById(R.id.password);
         nameInput = findViewById(R.id.name);
-        registerbtn = findViewById(R.id.registerBtn);
+        AppCompatButton registerbtn = findViewById(R.id.registerBtn);
 
         registerbtn.setOnClickListener(this::onRegisterClick);
 

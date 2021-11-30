@@ -24,8 +24,8 @@ import org.json.JSONObject;
 
 public class LoginActivity extends AppCompatActivity
 implements Response.Listener<String>, Response.ErrorListener{
-    public static final Gson gson = new Gson();
-    public static Account loggedAccount;
+    private static final Gson gson = new Gson();
+    private static Account loggedAccount;
 
     private EditText emailInput;
     private EditText passwordInput;
