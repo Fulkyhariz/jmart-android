@@ -10,10 +10,10 @@ import android.view.ViewGroup;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link Filter#newInstance} factory method to
+ * Use the {@link FilterFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Filter extends Fragment {
+public class FilterFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,7 +24,7 @@ public class Filter extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public Filter() {
+    public FilterFragment() {
         // Required empty public constructor
     }
 
@@ -37,8 +37,8 @@ public class Filter extends Fragment {
      * @return A new instance of fragment Filter.
      */
     // TODO: Rename and change types and number of parameters
-    public static Filter newInstance(String param1, String param2) {
-        Filter fragment = new Filter();
+    public static FilterFragment newInstance(String param1, String param2) {
+        FilterFragment fragment = new FilterFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);

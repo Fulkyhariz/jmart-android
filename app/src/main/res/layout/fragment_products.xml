@@ -3,12 +3,44 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".request.Products">
+    tools:context= ".ProductsFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
+        android:id="@+id/button_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/prev_button"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:text="@string/prev"
+                />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/next_button"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:text="@string/next"
+                />
+            <EditText
+                android:id="@+id/page_size"
+                android:layout_height="wrap_content"
+                android:layout_width="100dp"
+                android:inputType="text"  />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/go_button"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:text="@string/go"
+                />
+
+    </LinearLayout>
+    <ListView
+        android:id="@+id/list_product"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_marginTop="50dp"/>
 
 </FrameLayout>

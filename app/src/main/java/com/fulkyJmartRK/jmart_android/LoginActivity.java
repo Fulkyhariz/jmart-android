@@ -72,6 +72,7 @@ implements Response.Listener<String>, Response.ErrorListener{
         try{
             JSONObject obj = new JSONObject(response);
             i.putExtra("id", obj.getInt("id"));
+            loggedAccount = gson.fromJson(obj.toString(), Account.class);
         } catch (Exception e) {
             Toast.makeText(this, "Login Failed", Toast.LENGTH_LONG).show();
             return;

@@ -19,17 +19,15 @@ public class RequestFactory {
     }
 
     public static StringRequest getPage
-            (String parentURL,
-             int page,
-             int pageSize,
-             Response.Listener<String> listener,
-             Response.ErrorListener errorListener){
-        String url = String.format(URL_FORMAT_PAGE, parentURL);
-        Map<String, String> params = new HashMap<>();
-        params.put("page", String.valueOf(page));
-        params.put("pageSize", String.valueOf(pageSize));
-        return new StringRequest(Request.Method.GET, url, listener, errorListener){
-            public Map<String, String> getParams(){return params;}
-        };
+            (
+                    String parentURI,
+                    int page,
+                    int pageSize,
+                    Response.Listener<String> listener,
+                    Response.ErrorListener errorListener
+            )
+    {
+        String url = String.format(URL_FORMAT_PAGE, parentURI, page, pageSize);
+        return new StringRequest(Request.Method.GET, url, listener, errorListener);
     }
 }

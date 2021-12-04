@@ -3,9 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/fulky/Documents/Akademik/5th Term/OOP/Prak/jmart-android/app/src/main/res/layout/acitivty_createproduct.xml" value="0.1" />
         <entry key="..\:/Users/fulky/Documents/Akademik/5th Term/OOP/Prak/jmart-android/app/src/main/res/layout/activity_login.xml" value="0.264" />
-        <entry key="..\:/Users/fulky/Documents/Akademik/5th Term/OOP/Prak/jmart-android/app/src/main/res/layout/activity_main.xml" value="0.24230072463768115" />
+        <entry key="..\:/Users/fulky/Documents/Akademik/5th Term/OOP/Prak/jmart-android/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/fulky/Documents/Akademik/5th Term/OOP/Prak/jmart-android/app/src/main/res/layout/activity_register.xml" value="0.24230072463768115" />
+        <entry key="..\:/Users/fulky/Documents/Akademik/5th Term/OOP/Prak/jmart-android/app/src/main/res/layout/fragment_filter.xml" value="0.264" />
+        <entry key="..\:/Users/fulky/Documents/Akademik/5th Term/OOP/Prak/jmart-android/app/src/main/res/layout/fragment_products.xml" value="0.4742468415937804" />
+        <entry key="..\:/Users/fulky/Documents/Akademik/5th Term/OOP/Prak/jmart-android/app/src/main/res/menu/item.xml" value="0.1" />
       </map>
     </option>
   </component>

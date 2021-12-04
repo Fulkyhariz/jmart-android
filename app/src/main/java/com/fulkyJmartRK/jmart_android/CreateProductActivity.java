@@ -1,2 +1,4 @@
-package com.fulkyJmartRK.jmart_android;public class CreateProductActivity {
+package com.fulkyJmartRK.jmart_android;
+
+public class CreateProductActivity {
 }
