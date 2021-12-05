@@ -5,6 +5,8 @@ import androidx.fragment.app.FragmentManager;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 
 import com.google.android.material.tabs.TabLayout;
 
@@ -46,7 +48,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
         pager2.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
             @Override
             public void onPageSelected(int position) {
@@ -54,5 +55,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_main, menu);
+        return true;
     }
 }

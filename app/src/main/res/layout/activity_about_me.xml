@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AboutMeActivity">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="5dp">
+
+        <TextView
+            android:id="@+id/account_detail_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:textSize="18sp"
+            android:text="Account Details" />
+
+        <LinearLayout android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginTop="60dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_gravity="center_horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                android:textSize="16dp"
+                android:text="Name"
+                android:layout_marginRight="130dp"
+                />
+
+            <TextView
+                android:id="@+id/name_detail"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="textEnd"
+                android:layout_gravity="end"
+                android:textSize="16dp"
+                android:text="nama"
+                />
+        </LinearLayout>
+
+        <LinearLayout android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginTop="100dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_gravity="center_horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                android:textSize="16dp"
+                android:text="Email"
+                android:layout_marginRight="130dp"
+                />
+
+            <TextView
+                android:id="@+id/email_detail"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="textEnd"
+                android:layout_gravity="end"
+                android:textSize="16dp"
+                android:text="email"
+                />
+        </LinearLayout>
+
+        <LinearLayout android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginTop="140dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_gravity="center_horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                android:textSize="16dp"
+                android:text="Balance"
+                android:layout_marginRight="130dp"
+                />
+
+            <TextView
+                android:id="@+id/balance_detail"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="textEnd"
+                android:layout_gravity="end"
+                android:textSize="16dp"
+                android:text="0.0"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/button_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="200dp"
+            android:orientation="horizontal">
+            <EditText
+                android:id="@+id/topup_amount"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="30dp"
+                android:layout_width="200dp"
+                android:hint="Top Up Amount"
+                android:inputType="text"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/topup_button"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:text="TOP UP"
+                />
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/register_store_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="280dp"
+            android:orientation="horizontal"
+            android:text="REGISTER STORE"
+            />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginTop="280dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginHorizontal="20dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="5dp">
+
+            <TextView
+                android:id="@+id/register_store_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:textSize="18sp"
+                android:text="Register Store" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <EditText
+                    android:hint="Name"
+                    android:id="@+id/register_store_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="80dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:inputType="text" />
+
+                <EditText
+                    android:hint="Address"
+                    android:id="@+id/register_store_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_below="@id/register_store_name"
+                    android:inputType="text" />
+
+                <EditText
+                    android:hint="Phone Number"
+                    android:id="@+id/register_store_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_below="@id/register_store_address"
+                    android:inputType="text" />
+
+            </RelativeLayout>
+
+            <LinearLayout android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_marginTop="300dp"
+                android:layout_marginHorizontal="20dp"
+                android:gravity="center"
+                android:layout_alignParentBottom="true">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/register_store_button_confirm"
+                    android:layout_width="120dp"
+                    android:layout_height="50dp"
+                    android:text="REGISTER"
+                    android:layout_marginEnd="50dp"
+                    />
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/register_store_button_cancel"
+                    android:layout_width="120dp"
+                    android:layout_height="50dp"
+                    android:text="CANCEL"
+                    />
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginTop="280dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginHorizontal="20dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="5dp">
+            <TextView
+                android:id="@+id/store_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:textSize="18sp"
+                android:text="Store" />
+
+            <LinearLayout android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_marginTop="60dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_gravity="center_horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:layout_gravity="center"
+                    android:textSize="16dp"
+                    android:text="Name"
+                    android:layout_marginRight="80dp"
+                    />
+
+                <TextView
+                    android:id="@+id/name_store"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="textEnd"
+                    android:layout_gravity="end"
+                    android:textSize="16dp"
+                    android:text="nama"
+                    />
+            </LinearLayout>
+
+            <LinearLayout android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_marginTop="100dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_gravity="center_horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:layout_gravity="center"
+                    android:textSize="16dp"
+                    android:text="Address"
+                    android:layout_marginRight="80dp"
+                    />
+
+                <TextView
+                    android:id="@+id/address_store"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="textEnd"
+                    android:layout_gravity="end"
+                    android:textSize="16dp"
+                    android:text="address"
+                    />
+            </LinearLayout>
+
+            <LinearLayout android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_marginTop="140dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_gravity="center_horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:layout_gravity="center"
+                    android:textSize="16dp"
+                    android:text="Phone Number"
+                    />
+
+                <TextView
+                    android:id="@+id/phone_number_store"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="textEnd"
+                    android:layout_gravity="end"
+                    android:textSize="16dp"
+                    android:text="085156275975"
+                    />
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

@@ -1,4 +1,4 @@
-package com.fulkyJmartRK.jmart_android.request;
+package com.fulkyJmartRK.jmart_android;
 
 import android.os.Bundle;
 
