@@ -21,7 +21,7 @@
             android:textSize="18sp"
             android:text="Account Details" />
 
-        <LinearLayout android:layout_height="wrap_content"
+        <RelativeLayout android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:layout_marginTop="60dp"
             android:layout_marginHorizontal="20dp"
@@ -41,14 +41,13 @@
                 android:id="@+id/name_detail"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:textAlignment="textEnd"
                 android:layout_gravity="end"
-                android:textSize="16dp"
                 android:text="nama"
-                />
-        </LinearLayout>
+                android:textAlignment="textEnd"
+                android:textSize="16dp" />
+        </RelativeLayout>
 
-        <LinearLayout android:layout_height="wrap_content"
+        <RelativeLayout android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:layout_marginTop="100dp"
             android:layout_marginHorizontal="20dp"
@@ -73,9 +72,9 @@
                 android:textSize="16dp"
                 android:text="email"
                 />
-        </LinearLayout>
+        </RelativeLayout>
 
-        <LinearLayout android:layout_height="wrap_content"
+        <RelativeLayout android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:layout_marginTop="140dp"
             android:layout_marginHorizontal="20dp"
@@ -100,9 +99,9 @@
                 android:textSize="16dp"
                 android:text="0.0"
                 />
-        </LinearLayout>
+        </RelativeLayout>
 
-        <LinearLayout
+        <RelativeLayout
             android:id="@+id/button_group"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -110,21 +109,22 @@
             android:layout_marginHorizontal="20dp"
             android:layout_marginTop="200dp"
             android:orientation="horizontal">
+
             <EditText
                 android:id="@+id/topup_amount"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="30dp"
-                android:layout_width="200dp"
                 android:hint="Top Up Amount"
-                android:inputType="text"/>
+                android:inputType="text" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/topup_button"
                 android:layout_width="100dp"
                 android:layout_height="50dp"
-                android:text="TOP UP"
-                />
-        </LinearLayout>
+                android:layout_toEndOf="@id/topup_amount"
+                android:text="TOP UP" />
+        </RelativeLayout>
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/register_store_button"
@@ -138,6 +138,7 @@
             />
 
         <androidx.cardview.widget.CardView
+            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="fill_parent"
             android:layout_marginTop="280dp"
@@ -189,7 +190,7 @@
 
             </RelativeLayout>
 
-            <LinearLayout android:layout_height="wrap_content"
+            <RelativeLayout android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 android:layout_marginTop="300dp"
                 android:layout_marginHorizontal="20dp"
@@ -206,14 +207,16 @@
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/register_store_button_cancel"
                     android:layout_width="120dp"
+                    android:layout_toEndOf="@id/register_store_button_confirm"
                     android:layout_height="50dp"
                     android:text="CANCEL"
                     />
-            </LinearLayout>
+            </RelativeLayout>
 
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:visibility="invisible"
             android:layout_width="match_parent"
             android:layout_height="fill_parent"
             android:layout_marginTop="280dp"
@@ -229,7 +232,7 @@
                 android:textSize="18sp"
                 android:text="Store" />
 
-            <LinearLayout android:layout_height="wrap_content"
+            <RelativeLayout android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 android:layout_marginTop="60dp"
                 android:layout_marginHorizontal="20dp"
@@ -254,9 +257,9 @@
                     android:textSize="16dp"
                     android:text="nama"
                     />
-            </LinearLayout>
+            </RelativeLayout>
 
-            <LinearLayout android:layout_height="wrap_content"
+            <RelativeLayout android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 android:layout_marginTop="100dp"
                 android:layout_marginHorizontal="20dp"
@@ -281,9 +284,9 @@
                     android:textSize="16dp"
                     android:text="address"
                     />
-            </LinearLayout>
+            </RelativeLayout>
 
-            <LinearLayout android:layout_height="wrap_content"
+            <RelativeLayout android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 android:layout_marginTop="140dp"
                 android:layout_marginHorizontal="20dp"
@@ -307,7 +310,7 @@
                     android:textSize="16dp"
                     android:text="085156275975"
                     />
-            </LinearLayout>
+            </RelativeLayout>
 
 
         </androidx.cardview.widget.CardView>

@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     tools:context= ".ProductsFragment">
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/button_group"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -19,24 +19,27 @@
                 />
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/next_button"
+                android:layout_toEndOf="@id/prev_button"
                 android:layout_width="100dp"
                 android:layout_height="50dp"
                 android:text="@string/next"
                 />
             <EditText
                 android:id="@+id/page_size"
+                android:layout_toEndOf="@id/next_button"
                 android:layout_height="wrap_content"
                 android:layout_width="100dp"
                 android:inputType="text"  />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/go_button"
+                android:layout_toEndOf="@id/page_size"
                 android:layout_width="100dp"
                 android:layout_height="50dp"
                 android:text="@string/go"
                 />
 
-    </LinearLayout>
+    </RelativeLayout>
     <ListView
         android:id="@+id/list_product"
         android:layout_width="match_parent"

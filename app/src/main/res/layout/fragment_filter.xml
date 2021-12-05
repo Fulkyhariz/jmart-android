@@ -21,26 +21,30 @@
         <EditText
             android:id="@+id/name_filter_form"
             android:layout_width="match_parent"
-            android:layout_below="@id/name_filter"
             android:layout_height="wrap_content"
+            android:layout_below="@id/name_filter"
             android:inputType="text" />
     </RelativeLayout>
 
-    <LinearLayout android:layout_height="wrap_content"
-        android:layout_width="match_parent"
+    <RelativeLayout android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_marginHorizontal="20dp"
         android:layout_gravity="center_horizontal"
         android:id="@+id/range_layout"
         android:layout_below="@id/name_layout">
-        <RelativeLayout android:layout_height="fill_parent"
+
+        <RelativeLayout
+            android:id="@+id/lowest_layout"
             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:gravity="start">
-            <TextView android:layout_height="20dp"
-                android:layout_width="wrap_content"
-                android:text="@string/lowest_price"
+
+            <TextView
                 android:id="@+id/lowest_price"
-                />
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:text="@string/lowest_price" />
 
             <EditText
                 android:id="@+id/range_lowest"
@@ -56,12 +60,14 @@
             android:textAlignment="center"
             android:text="to"
             android:layout_marginVertical="20dp"
-
+            android:layout_toEndOf="@id/lowest_layout"
+            android:id="@+id/totextview"
             />
 
         <RelativeLayout android:layout_height="wrap_content"
-            android:layout_width="fill_parent"
+            android:layout_width="wrap_content"
             android:gravity="end"
+            android:layout_toEndOf="@id/totextview"
             >
 
             <TextView
@@ -71,65 +77,76 @@
                 android:text="@string/highest_price" />
 
             <EditText
-                android:layout_below="@id/highest_price"
                 android:id="@+id/range_highest"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/highest_price"
                 android:inputType="text" />
         </RelativeLayout>
 
-    </LinearLayout>
+    </RelativeLayout>
 
-    <LinearLayout android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:layout_marginTop="10dp"
-        android:layout_marginHorizontal="20dp"
-        android:layout_gravity="center_horizontal"
+    <RelativeLayout
         android:id="@+id/condition_layout"
-        android:layout_below="@id/range_layout">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:textSize="16dp"
-            android:text="Product Condition"
-            android:layout_marginRight="100dp"
-            />
-        <CheckBox android:id="@+id/checkbox_new"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New" />
-        <CheckBox android:id="@+id/checkbox_used"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Used"/>
-
-    </LinearLayout>
-
-    <LinearLayout android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:layout_marginTop="10dp"
-        android:layout_marginHorizontal="20dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/range_layout"
         android:layout_gravity="center_horizontal"
-        android:layout_below="@id/condition_layout">
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp">
 
         <TextView
+            android:id="@+id/product_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:textSize="16dp"
-            android:text="Product Category"
+            android:layout_centerVertical="true"
             android:layout_marginRight="100dp"
-            />
+            android:text="Product Condition"
+            android:textAlignment="center"
+            android:textSize="16dp" />
+
+        <CheckBox
+            android:id="@+id/checkbox_new"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/product_text"
+            android:text="New" />
+
+        <CheckBox
+            android:id="@+id/checkbox_used"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/checkbox_new"
+            android:text="Used" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/condition_layout"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/category_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Product Category"
+            android:textAlignment="center"
+            android:textSize="16dp" />
+
         <Spinner
             android:id="@+id/category_spinner"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:entries="@array/product"/>
-    </LinearLayout>
+            android:layout_alignParentEnd="true"
+            android:entries="@array/product"
+            android:textAlignment="textEnd" />
+    </RelativeLayout>
 
-    <LinearLayout android:layout_height="wrap_content"
+    <RelativeLayout android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:layout_marginHorizontal="20dp"
         android:layout_marginBottom="50dp"
@@ -143,12 +160,13 @@
             android:text="APPLY"
             android:layout_marginRight="50dp"
             />
+
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/clear_button"
             android:layout_width="150dp"
             android:layout_height="50dp"
-            android:text="CLEAR"
-            />
-    </LinearLayout>
+            android:layout_toEndOf="@id/apply_button"
+            android:text="CLEAR" />
+    </RelativeLayout>
 
 </RelativeLayout>

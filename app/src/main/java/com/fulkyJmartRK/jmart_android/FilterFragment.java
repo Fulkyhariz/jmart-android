@@ -2,57 +2,43 @@ package com.fulkyJmartRK.jmart_android;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
+import android.widget.EditText;
+import android.widget.Spinner;
+
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.Volley;
+import com.fulkyJmartRK.jmart_android.request.LoginRequest;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link FilterFragment#newInstance} factory method to
+ * Use the {@link FilterFragment} factory method to
  * create an instance of this fragment.
  */
 public class FilterFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    androidx.appcompat.widget.AppCompatButton clear;
+    EditText name;
+    EditText lowestPrice;
+    EditText highestPrice;
+    CheckBox newFilter;
+    CheckBox used;
+    Spinner category;
 
     public FilterFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment Filter.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static FilterFragment newInstance(String param1, String param2) {
-        FilterFragment fragment = new FilterFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
@@ -60,5 +46,29 @@ public class FilterFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_filter, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        clear = view.findViewById(R.id.clear_button);
+        name = view.findViewById(R.id.name_filter_form);
+        lowestPrice = view.findViewById(R.id.range_lowest);
+        highestPrice = view.findViewById(R.id.range_highest);
+        newFilter = view.findViewById(R.id.checkbox_new);
+        used = view.findViewById(R.id.checkbox_used);
+        category = view.findViewById(R.id.category_spinner);
+
+
+        clear.setOnClickListener(this::onClearClick);
+    }
+
+    private void onClearClick(View view){
+        name.setText("");
+        lowestPrice.setText("");
+        highestPrice.setText("");
+        newFilter.setChecked(false);
+        used.setChecked(false);
+        category.setSelection(0);
     }
 }
