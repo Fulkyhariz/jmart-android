@@ -137,7 +137,9 @@
             android:text="REGISTER STORE"
             />
 
+
         <androidx.cardview.widget.CardView
+            android:id="@+id/register_store_card_view"
             android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="fill_parent"
@@ -164,7 +166,7 @@
                     android:id="@+id/register_store_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="80dp"
+                    android:layout_marginTop="50dp"
                     android:layout_marginHorizontal="20dp"
                     android:inputType="text" />
 
@@ -173,7 +175,7 @@
                     android:id="@+id/register_store_address"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="10dp"
                     android:layout_marginHorizontal="20dp"
                     android:layout_below="@id/register_store_name"
                     android:inputType="text" />
@@ -183,39 +185,38 @@
                     android:id="@+id/register_store_phone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="10dp"
                     android:layout_marginHorizontal="20dp"
                     android:layout_below="@id/register_store_address"
                     android:inputType="text" />
 
-            </RelativeLayout>
+                <RelativeLayout android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_below="@+id/register_store_phone"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp">
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/register_store_button_confirm"
+                        android:layout_width="120dp"
+                        android:layout_height="50dp"
+                        android:text="REGISTER"
+                        android:layout_marginEnd="50dp"
+                        />
 
-            <RelativeLayout android:layout_height="wrap_content"
-                android:layout_width="match_parent"
-                android:layout_marginTop="300dp"
-                android:layout_marginHorizontal="20dp"
-                android:gravity="center"
-                android:layout_alignParentBottom="true">
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/register_store_button_cancel"
+                        android:layout_width="120dp"
+                        android:layout_height="50dp"
+                        android:layout_toEndOf="@id/register_store_button_confirm"
+                        android:text="CANCEL" />
+                </RelativeLayout>
 
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/register_store_button_confirm"
-                    android:layout_width="120dp"
-                    android:layout_height="50dp"
-                    android:text="REGISTER"
-                    android:layout_marginEnd="50dp"
-                    />
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/register_store_button_cancel"
-                    android:layout_width="120dp"
-                    android:layout_toEndOf="@id/register_store_button_confirm"
-                    android:layout_height="50dp"
-                    android:text="CANCEL"
-                    />
             </RelativeLayout>
 
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/store_card_view"
             android:visibility="invisible"
             android:layout_width="match_parent"
             android:layout_height="fill_parent"
@@ -279,11 +280,10 @@
                     android:id="@+id/address_store"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:textAlignment="textEnd"
                     android:layout_gravity="end"
-                    android:textSize="16dp"
                     android:text="address"
-                    />
+                    android:textAlignment="textEnd"
+                    android:textSize="16dp" />
             </RelativeLayout>
 
             <RelativeLayout android:layout_height="wrap_content"

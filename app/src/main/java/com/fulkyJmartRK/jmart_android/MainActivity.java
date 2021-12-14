@@ -73,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_main, menu);
         MenuItem add = menu.findItem(R.id.menu_add);
+
         if(loggedAccount.store == null){
             add.setVisible(false);
         }
@@ -86,14 +87,12 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.menu_add:
-                Toast.makeText(this, "add selected", Toast.LENGTH_LONG).show();
                 onAddClick();
                 return true;
             case R.id.menu_search:
 
                 return true;
             case R.id.menu_profile:
-                Toast.makeText(this, "profile selected", Toast.LENGTH_LONG).show();
                 onProfileClick();
                 return true;
         }
