@@ -77,12 +77,13 @@ public class CreateProductActivity extends AppCompatActivity {
 
     private byte getShipmentByte(String shipment){
         byte value;
-        if (shipment.equals("INSTANT")) value = (1<<0);
-        if (shipment.equals("KARGO")) value = (1<<1);
-        if (shipment.equals("NEXT DAY")) value = (1<<2);
-        if (shipment.equals("REGULER")) value = (1<<3);
-        if (shipment.equals("SAME DAY")) value = (1<<4);
+        if (shipment.equals("INSTANT")) value = (byte) (1<<0);
+        else if (shipment.equals("KARGO")) value = (1<<1);
+        else if (shipment.equals("NEXT DAY")) value = (1<<2);
+        else if (shipment.equals("REGULER")) value = (1<<3);
+        else if (shipment.equals("SAME DAY")) value = (1<<4);
         else value = 0;
+        System.out.println(value);
         return value;
     }
 
@@ -92,7 +93,6 @@ public class CreateProductActivity extends AppCompatActivity {
     }
 
     private void onApplyClicked(View view){
-        final Product[] product = new Product[1];
         String productName = nameInput.getText().toString();
         int productWeight = Integer.parseInt(weightInput.getText().toString());
         double productPrice = Double.parseDouble(priceInput.getText().toString());
@@ -100,6 +100,7 @@ public class CreateProductActivity extends AppCompatActivity {
         Boolean productCondition = getProductCondition();
         ProductCategory productCategory = ProductCategory.valueOf(categorySpinner.getSelectedItem().toString());
         byte productShipment = getShipmentByte(shipmentPlanSpinner.getSelectedItem().toString());
+        System.out.println(shipmentPlanSpinner.getSelectedItem().toString());
         int id = 1;
         System.out.println(id);
 
@@ -111,7 +112,6 @@ public class CreateProductActivity extends AppCompatActivity {
                             JSONObject obj = new JSONObject(response);
                             if(obj != null){
                                 Toast.makeText(CreateProductActivity.this, "Create Product Successful", Toast.LENGTH_LONG).show();
-                                product[0] = gson.fromJson(obj.toString(), Product.class);
                                 finish();
                                 startActivity(getIntent());
                             }

@@ -11,33 +11,33 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="horizontal">
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/prev_button"
-                android:layout_width="100dp"
-                android:layout_height="50dp"
-                android:text="@string/prev"
-                />
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/next_button"
-                android:layout_toEndOf="@id/prev_button"
-                android:layout_width="100dp"
-                android:layout_height="50dp"
-                android:text="@string/next"
-                />
-            <EditText
-                android:id="@+id/page_size"
-                android:layout_toEndOf="@id/next_button"
-                android:layout_height="wrap_content"
-                android:layout_width="100dp"
-                android:inputType="text"  />
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/go_button"
-                android:layout_toEndOf="@id/page_size"
-                android:layout_width="100dp"
-                android:layout_height="50dp"
-                android:text="@string/go"
-                />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/prev_button"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:text="@string/prev" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/next_button"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_toEndOf="@id/prev_button"
+            android:text="@string/next" />
+
+        <EditText
+            android:id="@+id/page"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/next_button"
+            android:inputType="text" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/go_button"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_toEndOf="@id/page"
+            android:text="@string/go" />
 
     </RelativeLayout>
     <ListView
