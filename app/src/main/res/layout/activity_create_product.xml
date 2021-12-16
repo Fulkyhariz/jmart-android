@@ -44,7 +44,7 @@
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="20dp"
                 android:hint="Weight"
-                android:inputType="text" />
+                android:inputType="number" />
 
             <EditText
                 android:id="@+id/create_price"
@@ -52,9 +52,9 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/create_weight"
                 android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="18dp"
                 android:hint="Price"
-                android:inputType="text" />
+                android:inputType="number" />
 
             <EditText
                 android:id="@+id/create_discount"
@@ -64,7 +64,7 @@
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="20dp"
                 android:hint="Discount"
-                android:inputType="text" />
+                android:inputType="number" />
 
             <RelativeLayout
                 android:id="@+id/condition_create"

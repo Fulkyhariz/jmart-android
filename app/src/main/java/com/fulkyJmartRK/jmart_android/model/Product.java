@@ -3,7 +3,7 @@ package com.fulkyJmartRK.jmart_android.model;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class Product extends Serializable {
+public class Product implements java.io.Serializable {
     public int accountId;
     public ProductCategory category;
     public boolean conditionUsed;
@@ -28,6 +28,24 @@ public class Product extends Serializable {
             e.printStackTrace();
         }
 
+    }
+
+    public Product(int accountId,
+                   ProductCategory category,
+                   boolean conditionUsed,
+                   double discount,
+                   String name,
+                   double price,
+                   byte shipmentPlans,
+                   int weight){
+            this.accountId = accountId ;
+            this.name = name ;
+            this.weight = weight;
+            this.conditionUsed = conditionUsed ;
+            this.price = price ;
+            this.category = category;
+            this.shipmentPlans = shipmentPlans;
+            this.discount = discount ;
     }
 
 /*    public String toString(){

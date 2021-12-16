@@ -51,7 +51,7 @@
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/lowest_price"
-                android:inputType="text" />
+                android:inputType="number" />
         </RelativeLayout>
 
         <TextView
@@ -81,7 +81,7 @@
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/highest_price"
-                android:inputType="text" />
+                android:inputType="number" />
         </RelativeLayout>
 
     </RelativeLayout>
@@ -157,9 +157,8 @@
             android:id="@+id/apply_button"
             android:layout_width="150dp"
             android:layout_height="50dp"
-            android:text="APPLY"
             android:layout_marginRight="50dp"
-            />
+            android:text="APPLY" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/clear_button"
