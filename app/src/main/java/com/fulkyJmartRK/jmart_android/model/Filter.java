@@ -4,14 +4,16 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class Filter implements java.io.Serializable {
-    public int accountId;
-    public ProductCategory category;
-    public boolean isUsed;
-    public boolean isNew;
-    public String name;
-    public double maxPrice;
-    public double minPrice;
-
+    public static int accountId;
+    public static ProductCategory category;
+    public static boolean isUsed;
+    public static boolean isNew;
+    public static String name = "belum diganti";
+    public static double maxPrice;
+    public static double minPrice;
+    public static boolean isFiltered = false;
+    public static int categoryPos = 0;
+/*
 
     public Filter(int accountId,
                   ProductCategory category,
@@ -27,5 +29,5 @@ public class Filter implements java.io.Serializable {
         this.name = name;
         this.maxPrice = maxPrice;
         this.minPrice = minPrice;
-    }
+    }*/
 }

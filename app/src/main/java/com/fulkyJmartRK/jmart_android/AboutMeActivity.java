@@ -2,6 +2,7 @@ package com.fulkyJmartRK.jmart_android;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -26,6 +27,7 @@ public class AboutMeActivity extends AppCompatActivity {
     androidx.appcompat.widget.AppCompatButton topUpBtn;
     EditText topUpAmount;
     androidx.appcompat.widget.AppCompatButton registerStoreBtn;
+    androidx.appcompat.widget.AppCompatButton invoiceButton;
     EditText nameStoreReg;
     EditText addressStoreReg;
     EditText phoneStoreReg;
@@ -61,8 +63,9 @@ public class AboutMeActivity extends AppCompatActivity {
         phoneStore = findViewById(R.id.phone_number_store);
         registerCardView = findViewById(R.id.register_store_card_view);
         showStoreCardView = findViewById(R.id.store_card_view);
+        invoiceButton = findViewById(R.id.invoice_button);
 
-        loggedAccount = LoginActivity.getLoggedAccount();
+        loggedAccount = MainActivity.loggedAccount;
         nameAccount.setText(loggedAccount.name);
         emailAccount.setText(loggedAccount.email);
         balanceAccount.setText(String.valueOf(loggedAccount.balance));
@@ -108,8 +111,7 @@ public class AboutMeActivity extends AppCompatActivity {
         String nameStore = nameStoreReg.getText().toString();
         String addressStore = addressStoreReg.getText().toString();
         String phoneStore = phoneStoreReg.getText().toString();
-        int id = 1;
-        System.out.println(id);
+        int id = MainActivity.id;
 
         RegisterStoreRequest req = new RegisterStoreRequest(id, nameStore, addressStore, phoneStore,
                 new Response.Listener<String>() {
@@ -173,6 +175,13 @@ public class AboutMeActivity extends AppCompatActivity {
                 });
                 RequestQueue queue = Volley.newRequestQueue(AboutMeActivity.this);
                 queue.add(req);
+            }
+        });
+        invoiceButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                Intent i = new Intent(AboutMeActivity.this ,InvoiceHistoryActivity.class);
+                startActivity(i);
             }
         });
     }

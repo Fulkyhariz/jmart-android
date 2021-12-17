@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/info_layout"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/product_name_history"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:text="Produk"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/user_date_history"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/product_name_history"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:text="Tanggal"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/user_status_history"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/user_date_history"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:text="Status"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/user_total_history"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/user_status_history"
+            android:layout_marginStart="20dp"
+            android:layout_marginVertical="10dp"
+            android:text="Total"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/name_user_detail"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:text="nama"
+            android:textAlignment="textEnd"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/date_user_detail"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:layout_below="@id/name_user_detail"
+            android:text="tanggal"
+            android:textAlignment="textEnd"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/status_user_detail"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/date_user_detail"
+            android:layout_gravity="end"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:text="WAITING"
+            android:textAlignment="textEnd"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/total_user_detail"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/status_user_detail"
+            android:layout_gravity="end"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:text="WAITING"
+            android:textAlignment="textEnd"
+            android:textSize="16dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@id/info_layout"
+        android:layout_alignParentEnd="true">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_submit_payment"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="10dp"
+            android:text="Submit"
+            android:textAlignment="center"
+            android:textSize="16dp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_cancel_payment"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="10dp"
+            android:layout_below="@id/button_submit_payment"
+            android:text="Cancel"
+            android:textAlignment="center"
+            android:textSize="16dp" />
+    </RelativeLayout>
+
+</RelativeLayout>

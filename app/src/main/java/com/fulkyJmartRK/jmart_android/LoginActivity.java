@@ -57,7 +57,6 @@ implements Response.Listener<String>, Response.ErrorListener{
         String password = passwordInput.getText().toString();
 
         LoginRequest req = new LoginRequest(email, password, this, this);
-        System.out.println(req.getParams());
         RequestQueue queue = Volley.newRequestQueue(this);
         queue.add(req);
     }

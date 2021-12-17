@@ -39,7 +39,6 @@ public class ProductsFragment extends Fragment implements Response.Listener<Stri
     ListView productList;
     EditText page;
     Account loggedAccount;
-    Filter filter;
     Integer halaman;
     androidx.appcompat.widget.AppCompatButton goBtn;
     androidx.appcompat.widget.AppCompatButton prevBtn;
@@ -53,21 +52,6 @@ public class ProductsFragment extends Fragment implements Response.Listener<Stri
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
- /*       try {
-            Bundle args = getArguments();
-            filter = (Filter) args
-                    .getSerializable("product fragment");
-            System.out.println(filter.name);
-            System.out.println(filter.isNew);
-            System.out.println(filter.isUsed);
-            System.out.println(filter.maxPrice);
-            System.out.println(filter.minPrice);
-            System.out.println(filter.category);
-        }catch (NullPointerException e){
-            e.printStackTrace();
-        }*/
-
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_products, container, false);
     }
 
@@ -83,8 +67,9 @@ public class ProductsFragment extends Fragment implements Response.Listener<Stri
         loggedAccount = LoginActivity.getLoggedAccount();
         halaman = 0;
 
-        RequestQueue queue = Volley.newRequestQueue(getContext());
-        queue.add(RequestFactory.getPage("product", halaman, 10, this, this));
+        requestList();
+
+        System.out.println(Filter.name);
 
         goBtn.setOnClickListener(this::onGoClicked);
         nextBtn.setOnClickListener(this::onNextClicked);
@@ -94,7 +79,7 @@ public class ProductsFragment extends Fragment implements Response.Listener<Stri
             public void onItemClick(AdapterView<?> arg0, View arg1, int position, long arg3) {
                 Bundle bundle = new Bundle();
                 Intent i = new Intent(getContext(), ItemDetailsActivity.class);
-                bundle.putSerializable("item", new Product(products.get(position).accountId, products.get(position).category,
+                bundle.putSerializable("item", new Product(products.get(position).accountId, products.get(position).id, products.get(position).category,
                         products.get(position).conditionUsed, products.get(position).discount, products.get(position).name,
                         products.get(position).price, products.get(position).shipmentPlans, products.get(position).weight));
                 i.putExtras(bundle);
@@ -108,26 +93,38 @@ public class ProductsFragment extends Fragment implements Response.Listener<Stri
 
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        System.out.println(Filter.name);
+        requestList();
+    }
+
     public void onGoClicked(View view) {
         halaman = Integer.parseInt(page.getText().toString()) - 1;
-
-        RequestQueue queue = Volley.newRequestQueue(getContext());
-        queue.add(RequestFactory.getPage("product", halaman, 10, this, this));
+        requestList();
     }
 
     public void onNextClicked(View view) {
         halaman += 1;
-
-        RequestQueue queue = Volley.newRequestQueue(getContext());
-        queue.add(RequestFactory.getPage("product", halaman, 10, this, this));
+        requestList();
     }
 
     public void onPrevClicked(View view) {
         halaman -= 1;
         if (halaman < 0) halaman = 0;
+        requestList();
+    }
 
-        RequestQueue queue = Volley.newRequestQueue(getContext());
-        queue.add(RequestFactory.getPage("product", halaman, 10, this, this));
+    private void requestList(){
+        if (!Filter.isFiltered){
+            RequestQueue queue = Volley.newRequestQueue(getContext());
+            queue.add(RequestFactory.getPage("product", halaman, 10, this, this));
+        } else{
+            RequestQueue queue = Volley.newRequestQueue(getContext());
+            queue.add(RequestFactory.getPageFiltered(halaman, 10, Filter.name, Filter.minPrice, Filter.maxPrice
+            ,Filter.isUsed, Filter.isNew, Filter.category, this, this));
+        }
     }
 
     @Override
@@ -148,4 +145,5 @@ public class ProductsFragment extends Fragment implements Response.Listener<Stri
             e.printStackTrace();
         }
     }
+
 }

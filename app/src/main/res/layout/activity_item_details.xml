@@ -197,7 +197,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginRight="130dp"
-            android:text="Kategori"
+            android:text="Shipment Available"
             android:textAlignment="center"
             android:textSize="16dp" />
 
@@ -210,5 +210,89 @@
             android:textAlignment="textEnd"
             android:textSize="16dp" />
     </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_item_amount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginHorizontal="20dp"
+        android:layout_above="@+id/layout_item_address"
+        android:layout_marginBottom="20dp">
+
+        <EditText
+            android:id="@+id/item_amount"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="130dp"
+            android:hint="Amount"
+            android:textAlignment="textStart"
+            android:textSize="16dp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/calculate_total_button"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="end"
+            android:text="Calculate Total" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_item_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginHorizontal="20dp"
+        android:layout_above="@+id/layout_item_total"
+        android:layout_marginBottom="20dp">
+
+        <EditText
+            android:id="@+id/item_address"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="Address"
+            android:textAlignment="textStart"
+            android:textSize="16dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_item_total"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginHorizontal="20dp"
+        android:layout_above="@+id/buy_item_button"
+        android:layout_marginBottom="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="130dp"
+            android:text="Total Price"
+            android:textAlignment="center"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/total_payment"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:text=""
+            android:textAlignment="textEnd"
+            android:textSize="16dp" />
+    </RelativeLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buy_item_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:text="BUY THIS ITEM" />
 
 </RelativeLayout>

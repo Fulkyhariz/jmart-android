@@ -4,6 +4,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class Product implements java.io.Serializable {
+    public int id;
     public int accountId;
     public ProductCategory category;
     public boolean conditionUsed;
@@ -15,6 +16,7 @@ public class Product implements java.io.Serializable {
 
     public Product(JSONObject object){
         try {
+            this.id = object.getInt("id");
             this.accountId = object.getInt("accountId");
             this.name = object.getString("name");
             this.weight = object.getInt("weight");
@@ -31,6 +33,7 @@ public class Product implements java.io.Serializable {
     }
 
     public Product(int accountId,
+                   int id,
                    ProductCategory category,
                    boolean conditionUsed,
                    double discount,
@@ -38,6 +41,7 @@ public class Product implements java.io.Serializable {
                    double price,
                    byte shipmentPlans,
                    int weight){
+        this.id = id;
             this.accountId = accountId ;
             this.name = name ;
             this.weight = weight;

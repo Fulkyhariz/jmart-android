@@ -1,5 +1,6 @@
 package com.fulkyJmartRK.jmart_android;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -29,6 +30,8 @@ import java.io.Serializable;
  * create an instance of this fragment.
  */
 public class FilterFragment extends Fragment {
+
+    /*SendMessage SM;*/
 
     String TAG_MY_CLASS = "";
 
@@ -69,6 +72,15 @@ public class FilterFragment extends Fragment {
         used = view.findViewById(R.id.checkbox_used);
         category = view.findViewById(R.id.category_spinner);
 
+        if (Filter.isFiltered){
+            name.setText(Filter.name);
+            lowestPrice.setText(String.valueOf(Filter.minPrice));
+            highestPrice.setText(String.valueOf(Filter.maxPrice));
+            newFilter.setChecked(Filter.isUsed);
+            used.setChecked(Filter.isNew);
+            category.setSelection(Filter.categoryPos);
+        }
+
         clear.setOnClickListener(this::onClearClick);
         apply.setOnClickListener(this::onApplyClick);
     }
@@ -80,18 +92,24 @@ public class FilterFragment extends Fragment {
         newFilter.setChecked(false);
         used.setChecked(false);
         category.setSelection(0);
+        Filter.isFiltered = false;
     }
     private void onApplyClick(View view){
-        //Intent intent = new Intent(this, FragmentAdapter.class);
-        Filter filter = new Filter(1, ProductCategory.valueOf(category.getSelectedItem().toString()), used.isSelected(), newFilter.isSelected(), name.getText().toString(),
-                Double.parseDouble(highestPrice.getText().toString()), Double.parseDouble(lowestPrice.getText().toString()));
-        //intent.putExtras("value", filter);
-        Bundle args = new Bundle();
-        args.putSerializable(TAG_MY_CLASS, filter);
-        Fragment toFragment = new ProductsFragment();
-        toFragment.setArguments(args);
-        getFragmentManager()
-                .beginTransaction()
-                .add(R.id.view_pager2, toFragment).commit();
+
+        if (name.getText() == null) Filter.name = "";
+        else Filter.name = name.getText().toString();
+
+        Filter.minPrice = Double.parseDouble(lowestPrice.getText().toString());
+        Filter.maxPrice = Double.parseDouble(highestPrice.getText().toString());
+
+        Filter.isNew = newFilter.isChecked();
+        Filter.isUsed = used.isChecked();
+
+        if (category.getSelectedItem().toString().equals("-")) Filter.category = ProductCategory.NOT_CATEGORY;
+        else Filter.category = ProductCategory.valueOf(category.getSelectedItem().toString());
+
+        Filter.categoryPos = category.getSelectedItemPosition();
+        Filter.accountId = MainActivity.id;
+        Filter.isFiltered = true;
     }
 }

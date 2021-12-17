@@ -14,8 +14,6 @@ import java.util.ArrayList;
 
 public class ProductsAdapter extends ArrayAdapter<Product> {
 
-
-
     public ProductsAdapter(Context context, ArrayList<Product> product){
         super(context, 0, product);
     }

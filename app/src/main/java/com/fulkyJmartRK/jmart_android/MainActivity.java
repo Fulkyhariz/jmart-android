@@ -1,30 +1,36 @@
 package com.fulkyJmartRK.jmart_android;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentManager;
-import androidx.viewpager2.widget.ViewPager2;
-
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.AdapterView.*;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.fulkyJmartRK.jmart_android.model.*;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.viewpager2.widget.ViewPager2;
 
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.Volley;
+import com.fulkyJmartRK.jmart_android.model.Account;
+import com.fulkyJmartRK.jmart_android.request.RequestFactory;
 import com.google.android.material.tabs.TabLayout;
+import com.google.gson.Gson;
 
-public class MainActivity extends AppCompatActivity {
+import org.json.JSONObject;
 
+public class MainActivity extends AppCompatActivity implements Response.Listener<String>, Response.ErrorListener{
+
+    private static final Gson gson = new Gson();
+
+    public static int id;
     TabLayout tabLayout;
     ViewPager2 pager2;
     FragmentAdapter adapter;
-    Account loggedAccount;
+    public static Account loggedAccount;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         pager2 = findViewById(R.id.view_pager2);
 
         loggedAccount = LoginActivity.getLoggedAccount();
+        id = getIntent().getIntExtra("id", 0);
 
         FragmentManager fm = getSupportFragmentManager();
         adapter = new FragmentAdapter(fm, getLifecycle());
@@ -108,4 +115,33 @@ public class MainActivity extends AppCompatActivity {
         Intent i = new Intent(this, AboutMeActivity.class);
         startActivity(i);
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        RequestQueue queue = Volley.newRequestQueue(this);
+        queue.add(RequestFactory.getById("account", id,this, this));
+    }
+
+    @Override
+    public void onResponse(String response){
+        try{
+            JSONObject obj = new JSONObject(response);
+            loggedAccount = gson.fromJson(obj.toString(), Account.class);
+        } catch (Exception e) {
+            return;
+        }
+    }
+
+    @Override
+    public void onErrorResponse(VolleyError error) {
+
+    }
+
+    /*    @Override
+    public void sendData(Filter message) {
+        String tag = "android:switcher:" + R.id.view_pager2 + ":" + 0;
+        ProductsFragment f = (ProductsFragment) getSupportFragmentManager().findFragmentByTag(tag);
+        f.setFilter(message);
+    }*/
 }
