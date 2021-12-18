@@ -150,7 +150,7 @@ public class AboutMeActivity extends AppCompatActivity {
                 System.out.println(topup);
                 double balance = Double.parseDouble(topup);
                 System.out.println(balance);
-                int id = 1;
+                int id = MainActivity.id;
                 TopUpRequest req = new TopUpRequest(id, balance,
                         new Response.Listener<String>() {
                             @Override

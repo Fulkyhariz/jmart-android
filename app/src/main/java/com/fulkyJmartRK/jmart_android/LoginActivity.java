@@ -46,8 +46,6 @@ implements Response.Listener<String>, Response.ErrorListener{
         loginBtn = findViewById(R.id.loginButton);
         registerBtn = findViewById(R.id.registerBtn);
 
-        //emailInput.getText().toString();
-
         registerBtn.setOnClickListener(this::onRegisterClick);
         loginBtn.setOnClickListener(this::onLoginClick);
     }
@@ -83,6 +81,6 @@ implements Response.Listener<String>, Response.ErrorListener{
 
     @Override
     public void onErrorResponse(VolleyError error){
-        Toast.makeText(this, "Login Failed", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "System Failure", Toast.LENGTH_LONG).show();
     }
 }
